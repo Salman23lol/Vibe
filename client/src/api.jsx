@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Base API URL https://vibe-z8y6.vercel.app
 // const api = 'http://localhost:5000';
-const api = 'http://localhost:5000';
+const api = 'https://vibe-vert.vercel.app';
 
 // Axios instances with default headers
 export const authURI = `${api}/api/auth`;
