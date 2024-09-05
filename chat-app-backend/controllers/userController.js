@@ -3,29 +3,38 @@ const User = require("../models/User");
 const Chat = require("../models/Chat");
 const jwt = require("jsonwebtoken");
 
-exports.changeAccountImage = async (req, res) => {
-  const { imageUrl } = req.body;
+exports.updateUserProfile = async (req, res) => {
+  const { imageUrl, phoneNo, username, status } = req.body;
 
   try {
+    // Find the user by ID
     const user = await User.findById(req.user.userId);
-    user.accountImage = imageUrl;
+
+    // Update fields if they are provided in the request body
+    if (imageUrl) {
+      user.accountImage = imageUrl;
+    }
+    if (phoneNo) {
+      user.accountPhoneNo = phoneNo;
+    }
+    if (username) {
+      user.username = username;
+    }
+    if (status) {
+      user.status = status;
+    }
+
+    // Save the updated user object to the database
     await user.save();
 
-    res.json({ msg: "Account image updated", accountImage: imageUrl });
-  } catch (err) {
-    res.status(500).send("Server Error");
-  }
-};
-
-exports.changeAccountPhoneNo = async (req, res) => {
-  const { phoneNo } = req.body;
-
-  try {
-    const user = await User.findById(req.user.userId);
-    user.accountPhoneNo = phoneNo;
-    await user.save();
-
-    res.json({ msg: "Account phone number updated", accountPhoneNo: phoneNo });
+    // Respond with the updated user details
+    res.json({
+      msg: "User profile updated",
+      accountImage: user.accountImage,
+      accountPhoneNo: user.accountPhoneNo,
+      username: user.username,
+      status: user.status,
+    });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");

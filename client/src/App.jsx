@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/testing" element={<AuthCheck element={Testing} />} />
           <Route path="/home" element={<AuthCheck element={Contact} />} />
           <Route path="/me" element={<AuthCheck element={MeInfo} />} />
-          <Route path="/settings/:id" element={<AuthCheck element={SettingsPage} />} />
+          <Route path="/settings" element={<AuthCheck element={SettingsPage} />} />
           <Route path="/chat/:id" element={<AuthCheck element={Chat} />} />
           <Route path="/contact/:id" element={<AuthCheck element={ContactInfo} />} />
           <Route path="/contact/add" element={<AuthCheck element={ContactAdd} />} />

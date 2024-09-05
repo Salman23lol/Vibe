@@ -55,8 +55,8 @@ const YourHeader = ({ toggleSettings, fetchMeInfo }) => {
           <motion.img
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            loading="lazy"
-            className="w-auto h-12 text-2xl rounded"
+            loading="eager"
+            className="w-12 h-12 text-2xl rounded object-cover"
             src={fetchMeInfo?.accountImage || "/path/to/default/image.jpg"}
             alt="Account"
           />

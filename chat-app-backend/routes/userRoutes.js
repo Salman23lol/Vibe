@@ -41,11 +41,8 @@ router.delete('/delete-account', authMiddleware, userController.deleteAccount);
 // Change status
 router.post('/change-status', authMiddleware, userController.changeStatus);
 
-// Change account image
-router.post('/change-account-image', authMiddleware, userController.changeAccountImage);
-
-// Change account phone number
-router.post('/change-account-phoneNo', authMiddleware, userController.changeAccountPhoneNo);
+// Change Profile Info
+router.post('/update-profile', authMiddleware, userController.updateUserProfile);
 
 // Suggest contacts
 router.get('/suggestion-contacts', authMiddleware, userController.suggestContacts);

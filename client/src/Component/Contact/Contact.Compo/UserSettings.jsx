@@ -40,7 +40,7 @@ const UserSettings = () => {
     { text: "Accounts", icon: <FaUser />, action: () => {} },
     { text: "Mute Notifications", icon: <FaBell />, action: () => {} },
     { text: "Blocked", icon: <FaBan />, action: () => {} },
-    { text: "Settings", icon: <FaCog />, action: () => {} },
+    { text: "Settings", icon: <FaCog />, action: () => navigate('/settings') },
     { text: "Log out", icon: <FaSignOutAlt />, action: handleLogout },
   ];
 

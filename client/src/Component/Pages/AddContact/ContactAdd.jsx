@@ -130,6 +130,7 @@ const AddContact = () => {
                   src={result.accountImage}
                   alt={`${result.username}'s avatar`}
                   className="w-16 h-16 rounded"
+                  loading="eager"
                 />
                 <span className="flex-1 font-medium mx-4">
                   {result.username}
@@ -170,6 +171,7 @@ const AddContact = () => {
                     src={suggestion.accountImage}
                     alt={`${suggestion.username}'s avatar`}
                     className="w-full h-full rounded object-cover"
+                    loading="eager"
                   />
                 </div>
                 <span className="flex-1 font-medium mx-4">
