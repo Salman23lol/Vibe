@@ -81,9 +81,9 @@ const SettingsPage = () => {
     <div className="w-full h-screen bg-transparent text-white">
       <BackButton />
       <PageHeader title="Settings" />
-      <div className="w-full h-full grid grid-cols-2">
+      <div className="w-full h-full">
         <Section title="Appearance" content={renderPatterns()} />
-        <Section title="Account" content={<AccountPlaceholders />} />
+        {/* <Section title="Account" content={<AccountPlaceholders />} /> */}
       </div>
       <AnimatePresence>
         {isModalOpen && (
@@ -128,10 +128,10 @@ const Section = ({ title, content }) => (
   </div>
 );
 
-const AccountPlaceholders = () =>
-  Array(6).fill(null).map((_, index) => (
-    <div key={index} className="w-full h-64 border"></div>
-  ));
+// const AccountPlaceholders = () =>
+//   Array(6).fill(null).map((_, index) => (
+//     <div key={index} className="w-full h-64 border"></div>
+//   ));
 
 const PatternSettingsModal = ({
   isOpen,

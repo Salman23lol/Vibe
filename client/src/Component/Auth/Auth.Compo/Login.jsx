@@ -53,13 +53,13 @@ const Login = () => {
       >
         <FaHandPointLeft />
       </Link>
-      <motion.div  initial={{ scale: 0 }}
-          animate={{ scale: 1 }} className="w-full max-w-md p-8 space-y-6 bg-white bg-opacity-10 rounded shadow-md">
+      <motion.div
+        initial={{ y: -60 }}
+        animate={{ y: 0 }}
+        className="w-full max-w-md p-8 space-y-6 bg-white bg-opacity-10 rounded shadow-md"
+      >
         <h2 className="text-2xl font-bold text-center">Login</h2>
-        <form
-          onSubmit={handleLogin}
-          className="space-y-4"
-        >
+        <form onSubmit={handleLogin} className="space-y-4">
           <div className="flex items-center border-b border-gray-300 py-2">
             <IoMdMail className="mr-2" size={20} />
             <input
